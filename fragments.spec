@@ -1,4 +1,4 @@
-Name:           Fragments
+Name:           fragments
 Version:        2.0.2
 Release:        1
 Summary:        A GTK4 BitTorrent Client
