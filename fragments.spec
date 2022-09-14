@@ -44,7 +44,7 @@ cp %{SOURCE2} .cargo/config
 %meson_install
 %find_lang fragments %{?no_lang_C}
 
-%files
+%files -f fragments.lang
 %license COPYING.md
 %doc README.md
 %{_bindir}/fragments
@@ -54,5 +54,3 @@ cp %{SOURCE2} .cargo/config
 %{_datadir}/metainfo/de.haeckerfelix.Fragments.metainfo.xml
 %{_datadir}/dbus-1/services/de.haeckerfelix.Fragments.service
 %{_datadir}/fragments/
-
-%files lang -f fragments.lang
