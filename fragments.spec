@@ -1,24 +1,21 @@
 Name:           Fragments
 Version:        2.0.2
-Release:        0
+Release:        1
 Summary:        A GTK4 BitTorrent Client
-License:        GPL-3.0-only
+License:        GPL-3.0
 Group:          Productivity/Networking/Other
 URL:            https://gitlab.gnome.org/World/Fragments
-Source:         %{name}-%{version}.tar.xz
-Source2:        vendor.tar.xz
-Source3:        cargo_config
+Source0:         https://gitlab.gnome.org/World/Fragments/-/archive/%{version}/Fragments-%{version}.tar.bz2
+Source1:        vendor.tar.xz
+Source2:        cargo_config
 
 BuildRequires:  appstream-glib
-BuildRequires:  c++_compiler
-BuildRequires:  c_compiler
 BuildRequires:  cmake
 BuildRequires:  desktop-file-utils
 BuildRequires:  git
-BuildRequires:  libxml2-tools
+BuildRequires:  libxml2-utils
 BuildRequires:  meson
-BuildRequires:  openssl-devel >= 0.9.7
-BuildRequires:  pkgconfig
+BuildRequires:  pkgconfig(openssl)
 BuildRequires:  rust-packaging
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(gio-2.0) >= 2.66
@@ -37,20 +34,15 @@ GNOME HIG and includes well thought-out features.
 %prep
 %autosetup -p1 -a2
 mkdir .cargo
-cp %{SOURCE3} .cargo/config
+cp %{SOURCE2} .cargo/config
 
 %build
-export RUSTFLAGS=%{rustflags}
 %meson
 %meson_build
 
 %install
-export RUSTFLAGS=%{rustflags}
 %meson_install
 %find_lang fragments %{?no_lang_C}
-
-%check
-%meson_test
 
 %files
 %license COPYING.md
