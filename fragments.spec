@@ -32,7 +32,7 @@ GNOME HIG and includes well thought-out features.
 %lang_package
 
 %prep
-%autosetup -n Fragments-%{version} -p1
+%autosetup -a1 -n Fragments-%{version}
 mkdir .cargo
 cp %{SOURCE2} .cargo/config
 
