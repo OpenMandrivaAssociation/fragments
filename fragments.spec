@@ -37,6 +37,8 @@ mkdir .cargo
 cp %{SOURCE2} .cargo/config
 
 %build
+export CC=gcc
+export CXX=g++
 %meson
 %meson_build
 
