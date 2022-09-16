@@ -1,3 +1,5 @@
+%global rustflags '-Clink-arg=-Wl,-z,relro,-z,now'
+
 Name:           fragments
 Version:        2.0.2
 Release:        1
@@ -37,10 +39,12 @@ mkdir .cargo
 cp %{SOURCE2} .cargo/config
 
 %build
+export RUSTFLAGS=%{rustflags}
 %meson
 %meson_build
 
 %install
+export RUSTFLAGS=%{rustflags}
 %meson_install
 %find_lang fragments %{?no_lang_C}
 
