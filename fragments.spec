@@ -1,6 +1,6 @@
 Name:           fragments
 Version:        2.0.2
-Release:        1
+Release:        2
 Summary:        A GTK4 BitTorrent Client
 License:        GPL-3.0
 Group:          Productivity/Networking/Other
