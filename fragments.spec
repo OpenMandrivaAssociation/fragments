@@ -9,6 +9,7 @@ Source0:        https://gitlab.gnome.org/World/Fragments/-/archive/%{version}/Fr
 Source1:        vendor.tar.xz
 Source2:        cargo_config
 
+BuildRequires:  gettext
 BuildRequires:  appstream-util
 BuildRequires:  cmake
 BuildRequires:  desktop-file-utils
