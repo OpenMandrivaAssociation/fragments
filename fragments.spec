@@ -1,5 +1,5 @@
 Name:           fragments
-Version:        2.1.1
+Version:        3.0.0
 Release:        1
 Summary:        A GTK4 BitTorrent Client
 License:        GPL-3.0
@@ -9,6 +9,7 @@ Source0:        https://gitlab.gnome.org/World/Fragments/-/archive/%{version}/Fr
 Source1:        vendor.tar.xz
 Source2:        cargo_config
 
+BuildRequires:  gettext
 BuildRequires:  appstream-util
 BuildRequires:  cmake
 BuildRequires:  desktop-file-utils
