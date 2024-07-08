@@ -1,3 +1,5 @@
+%undefine _debugsource_packages
+
 Name:           fragments
 Version:        3.0.1
 Release:        1
